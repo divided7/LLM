@@ -43,7 +43,16 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 多义性：一个词在不同上下文中的实体类别可能不同，这对模型理解和分类带来了挑战。
 
 ## LLM
-
+在Hugging Face上测试, 以下模型显存占用情况, 以及使用模型进行三元组抽取的表现:
+[实验内容 Colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing)
+[Qwen2.5-0.5B](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct) 2.5GB  几乎不可靠 0.2
+[Qwen2.5-1.5B](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) 4GB    多数时候可靠 0.5
+[Qwen2.5-3B](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)  7GB       十分可靠 0.8
+[Qwen2.5-3B-Instruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GPTQ-Int4)  2.3GB       十分可靠 0.8
+[Qwen2.5-7B](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)  15GB
+[Qwen2.5-14B](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct)  29GB
+[Qwen2.5-32B](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct) 65GB
+[Qwen2.5-72B](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct) 145GB
 ## Knowledge Graph
 ### 什么是三元组信息
 三元组可以表示为以下形式: (主体, 关系, 客体)
@@ -62,11 +71,13 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 由于知识图谱的**有向图数据结构**由点和带方向的边构成，其恰好需要一个source(src，对应于三元组的主体sub）, relation（rel，表示主体客体关系），target（tgt，对应三元组的客体obj），因此在构建知识图谱过程中需要三元组数据。
 
 ### 如何获得三元组信息
-先看一个简单的英文三元组抽取例子: [colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing)
+一个简单的英文三元组抽取例子: [colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing)
 
 **最简单可靠的方案:** 利用强大的GPT类模型(但较为昂贵, 无论是时间还是金钱成本)
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/97c5c1c1-fa2b-4295-918e-41322eaa8e78">
+
+基于Qwen2.5模型的实验参考: [实验内容 Colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing)
 
 **基于NER的方案:** 利用NER技术 + /规则/机器学习/Transformer模型/_GPT(又贵又好)_
 
