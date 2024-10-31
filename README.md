@@ -1,4 +1,4 @@
-# LLM & KG
+![image](https://github.com/user-attachments/assets/446aae93-88e7-48ef-ad59-c976f14c8b4d)# LLM & KG
 
 ## Preface
 大语言模型已经能很好的实现问答、文本输出，但其输出结果可能有时候并没有足够的依据，因此利用 **RAG(Retrieval-Augmented Generation)** 技术，通过在生成回答之前先检索相关知识，从而使生成的内容更加可靠，适用于问答系统、文档生成、客户支持等任务。这样的相关知识可以是文档，也可以是知识图谱。
@@ -64,9 +64,57 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 ### 如何获得三元组信息
 先看一个简单的英文三元组抽取例子: [colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing)
 
-最简单的方案: 利用强大的GPT类模型
+**最简单可靠的方案:** 利用强大的GPT类模型(但较为昂贵, 无论是时间还是金钱成本)
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/97c5c1c1-fa2b-4295-918e-41322eaa8e78">
+
+**基于NER的方案:** 利用NER技术 + /规则/机器学习/Transformer模型/_GPT(又贵又好)_
+
+例如我有句子:
+
+```
+“巴菲特是著名的投资者，他投资了公司A和公司B。公司A收购了公司C。”
+```
+
+Step 1 假设通过NER技术得到结果
+```
+- 实体：巴菲特，标签：PERSON
+- 实体：公司A，标签：ORG
+- 实体：公司B，标签：ORG
+- 实体：公司C，标签：ORG
+```
+
+Step 2 对NER的到的实体进行交叉配对:
+
+```
+pairs = [    ("巴菲特", "公司A"),    ("巴菲特", "公司B"),    ("公司A", "公司C")]
+```
+
+Step 3 构建提问内容:
+
+```
+"巴菲特 和 公司A 之间的关系是什么？"
+"巴菲特 和 公司B 之间的关系是什么？"
+"公司A 和 公司B 之间的关系是什么？"
+```
+
+Step 4 利用Transformer模型/GPT:
+
+将原句子、提问内容给到Transformer模型，得到以下结果
+
+```
+"巴菲特 和 公司A 之间的关系是：投资"
+"巴菲特 和 公司A 之间的关系是：投资"
+"公司A 和 公司B 之间的关系是：收购"
+```
+
+Step 5 利用Transformer/GPT的结果搭建三元组
+
+```
+("巴菲特", "投资", "公司A")
+("巴菲特", "投资", "公司B")
+("公司A", "收购", "公司B")
+```
 
 
 ## LLM x Knowledge Graph
