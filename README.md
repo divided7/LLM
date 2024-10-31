@@ -46,7 +46,7 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 
 ## Knowledge Graph
 ### 三元组数据获取
-https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing
+简单的英文三元组抽取例子([colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing))https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing
 
 ## LLM x Knowledge Graph
 ### 知识图谱作为检索源
