@@ -45,7 +45,7 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 ## LLM
 在Hugging Face上测试, 以下模型显存占用情况, 以及使用模型进行三元组抽取的表现:
 [实验内容 Colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing)
-| 模型                           | 大小    | 可靠性           | 主观评分 |
+| 模型                           | 显存占用    | 可靠性           | 主观评分 |
 |--------------------------------|---------|------------------|------|
 | [Qwen2.5-0.5B](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct)       | 2.5GB   | 几乎不可靠       | 0.2  |
 | [Qwen2.5-1.5B](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct)       | 4GB     | 多数时候可靠     | 0.5  |
@@ -53,9 +53,9 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 | [Qwen2.5-3B-Instruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GPTQ-Int4) | 2.3GB   | 十分可靠         | 0.8  |
 | [Qwen2.5-7B](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)           | 15GB    | 十分可靠         | 0.8  |
 | [Qwen2.5-7B-Instruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4) | 5.4GB   | 十分可靠         | 0.8  |
-| [Qwen2.5-14B](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct)         | 29GB    | /                | /    |
-| [Qwen2.5-32B](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct)         | 65GB    | /                | /    |
-| [Qwen2.5-72B](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct)         | 145GB   | /                | /    |
+| [Qwen2.5-14B](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct)         | 29GB    |                 |     |
+| [Qwen2.5-32B](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct)         | 65GB    |                 |     |
+| [Qwen2.5-72B](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct)         | 145GB   |                 |     |
 
 ## Knowledge Graph
 ### 什么是三元组信息
