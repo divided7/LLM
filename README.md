@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/446aae93-88e7-48ef-ad59-c976f14c8b4d)# LLM & KG
+# LLM & KG
 
 ## Preface
 大语言模型已经能很好的实现问答、文本输出，但其输出结果可能有时候并没有足够的依据，因此利用 **RAG(Retrieval-Augmented Generation)** 技术，通过在生成回答之前先检索相关知识，从而使生成的内容更加可靠，适用于问答系统、文档生成、客户支持等任务。这样的相关知识可以是文档，也可以是知识图谱。
