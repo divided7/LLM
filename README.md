@@ -62,8 +62,10 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 由于知识图谱的**有向图数据结构**由点和带方向的边构成，其恰好需要一个source(src，对应于三元组的主体sub）, relation（rel，表示主体客体关系），target（tgt，对应三元组的客体obj），因此在构建知识图谱过程中需要三元组数据。
 
 ### 如何获得三元组信息
-简单的英文三元组抽取例子: [colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing)
+先看一个简单的英文三元组抽取例子: [colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing)
 
+最简单的方案: 利用强大的GPT类模型
+<img width="677" alt="image" src="https://github.com/user-attachments/assets/97c5c1c1-fa2b-4295-918e-41322eaa8e78">
 
 
 ## LLM x Knowledge Graph
