@@ -45,7 +45,7 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 ## LLM
 
 ## Knowledge Graph
-### 三元组数据获取
+### 什么是三元组信息
 三元组可以表示为以下形式: (主体, 关系, 客体)
 
 **示例**
@@ -58,6 +58,10 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 
 三元组：(马云, 创办了, 阿里巴巴)
 
+### 为什么要三元组信息
+由于知识图谱的**有向图数据结构**由点和带方向的边构成，其恰好需要一个source(src，对应于三元组的主体sub）, relation（rel，表示主体客体关系），target（tgt，对应三元组的客体obj），因此在构建知识图谱过程中需要三元组数据。
+
+### 如何获得三元组信息
 简单的英文三元组抽取例子: [colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing)
 
 
