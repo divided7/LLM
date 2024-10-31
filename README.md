@@ -46,7 +46,16 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 
 ## Knowledge Graph
 ### 三元组数据获取
-简单的英文三元组抽取例子[colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing)
+三元组可以表示为以下形式: (主体, 关系, 客体)
+**示例**
+句子：“巴菲特是投资大师。” 主体：巴菲特 关系：是 客体：投资大师
+三元组：(巴菲特, 是, 投资大师)
+
+句子：“马云创办了阿里巴巴。” 主体：马云 关系：创办了 客体：阿里巴巴
+三元组：(马云, 创办了, 阿里巴巴)
+简单的英文三元组抽取例子: [colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing)
+
+
 
 ## LLM x Knowledge Graph
 ### 知识图谱作为检索源
