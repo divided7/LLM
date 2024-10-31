@@ -65,7 +65,8 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 先看一个简单的英文三元组抽取例子: [colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing)
 
 最简单的方案: 利用强大的GPT类模型
-<img width="677" alt="image" src="https://github.com/user-attachments/assets/97c5c1c1-fa2b-4295-918e-41322eaa8e78">
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/97c5c1c1-fa2b-4295-918e-41322eaa8e78">
 
 
 ## LLM x Knowledge Graph
