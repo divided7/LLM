@@ -46,7 +46,7 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 在Hugging Face上测试, 以下模型显存占用情况, 以及使用模型进行三元组抽取的表现:
 [实验内容 Colab](https://colab.research.google.com/drive/1scsACHDW_1hjFq3KDSfsOuLgPJGx8ox9?usp=sharing)
 | 模型                           | 显存占用    | vLLM默认参数显存占用   | 可靠性           | 主观评分 |
-|--------------------------------|---------|------------------|------|
+|--------------------------------|---------|---------|------------------|------|
 | [Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct)       | 2.5GB   | |  几乎不可靠       | 0.2  |
 | [Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct)       | 4GB     | | 多数时候可靠     | 0.5  |
 | [Qwen2.5-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct)           | 7GB     | | 十分可靠         | 0.8  |
