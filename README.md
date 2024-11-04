@@ -48,12 +48,12 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 由于显存问题，白嫖modelscope的24GB显存进行部分实验；vLLM加载模型使用默认参数。
 | 模型                           | HF模型显存占用    | vLLM显存占用   | 可靠性           | 主观评分 |
 |--------------------------------|---------|---------|------------------|------|
-| [Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct)                   | 2.5GB   |       | 几乎不可靠        | 0.2  |
-| [Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct)                   | 4GB     |       | 多数时候可靠      | 0.5  |
-| [Qwen2.5-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct)                       | 7GB     |       | 十分可靠         | 0.8  |
-| [Qwen2.5-3B-Instruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GPTQ-Int4)   | 2.3GB   |  9.2GB| 十分可靠         | 0.8  |
-| [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)                       | 15GB    |       | 十分可靠         | 0.8  |
-| [Qwen2.5-7B-Instruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4)   | 5.4GB   | 16.5GB| 十分可靠         | 0.8  |
+| [Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct)                   | 2.5GB   |       | 几乎不可靠        | 0.1  |
+| [Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct)                   | 4GB     |       | 偶尔可靠         | 0.3  |
+| [Qwen2.5-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct)                       | 7GB     |       | 有些可靠         | 0.5  |
+| [Qwen2.5-3B-Instruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GPTQ-Int4)   | 2.3GB   |  9.2GB| 有些可靠         | 0.5  |
+| [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)                       | 15GB    |       | 有些可靠         | 0.5  |
+| [Qwen2.5-7B-Instruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4)   | 5.4GB   | 16.5GB| 有些可靠         | 0.5  |
 | [Qwen2.5-14B-Instruct](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct)                     | 29GB    |       |                |      |
 | [Qwen2.5-14BInstruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GPTQ-Int4)  |         | 18.3GB|                |      |
 | [Qwen2.5-32B-Instruct](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct)                     | 65GB    |       |                |      |
