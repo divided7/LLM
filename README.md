@@ -57,7 +57,7 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 | [Qwen2.5-14B-Instruct](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct)                     | 29GB    |       |                |      |
 | [Qwen2.5-14BInstruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GPTQ-Int4)  |         | 18.3GB|                |      |
 | [Qwen2.5-32B-Instruct](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct)                     | 65GB    |       |                |      |
-| [Qwen2.5-32B-Instruct](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct)                     |         |21.2GB (max_model_len=48)|                |      |
+| [Qwen2.5-32B-Instruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4)                     |         |21.2GB (max_model_len=48)|                |      |
 | [Qwen2.5-72B-Instruct](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct)                     | 145GB   |       |                |      |
 ### 部署优化
 直接使用Hugging Face上的demo推理模型存在严重效率低效的问题，尝试如下方案:
