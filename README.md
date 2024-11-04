@@ -56,7 +56,27 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 | [Qwen2.5-14B](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct)         | 29GB    |                 |     |
 | [Qwen2.5-32B](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct)         | 65GB    |                 |     |
 | [Qwen2.5-72B](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct)         | 145GB   |                 |     |
+### 部署优化
+直接使用Hugging Face上的demo推理模型存在严重效率低效的问题，尝试如下方案:
+* vLLM, 直接，大致需要配置以下环境:
+  ```
+  # 环境配置
+  conda create -n vllm python==3.10
+  conda activate vllm
+  pip install vllm==0.6.1 -i https://mirrors.aliyun.com/pypi/simple # 好像在Qwen2.5介绍页看到不支持当前最新版本(v0.6.3)
+  pip install modelscope -i https://mirrors.aliyun.com/pypi/simple
+  pip install -U accelerate bitsandbytes datasets peft transformers -i https://mirrors.aliyun.com/pypi/simple
+  pip install auto_gptq -i https://mirrors.aliyun.com/pypi/simple
+  pip install optimum -i https://mirrors.aliyun.com/pypi/simple
+  mkdir Qwen2.5 && cd Qwen2.5
 
+  # 下载模型
+  modelscope download --model Qwen/Qwen2.5-3B-Instruct-GPTQ-Int4 --local_dir ./3B/int4
+  modelscope download --model Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4 --local_dir ./3B/int4
+  modelscope download --model Qwen/Qwen2.5-3B-Instruct --local_dir ./3B/fp16
+  modelscope download --model Qwen/Qwen2.5-7B-Instruct --local_dir ./3B/fp16
+  
+  ```
 ## Knowledge Graph
 ### 什么是三元组信息
 三元组可以表示为以下形式: (主体, 关系, 客体)
