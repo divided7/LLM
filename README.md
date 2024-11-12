@@ -157,6 +157,20 @@ Step 5 利用Transformer/GPT的结果搭建三元组
 ("公司A", "收购", "公司B")
 ```
 
+## Knowledge Graph
+将 Neo4j 仓库添加到系统的apt源列表
+尝试了很多民间方案都安装失败了, 还是找的官方教程:
+https://neo4j.com/docs/operations-manual/current/installation/linux/debian/
+具体来说：
+```bash
+wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/neotechnology.gpg
+
+echo 'deb [signed-by=/etc/apt/keyrings/neotechnology.gpg] https://debian.neo4j.com stable latest' | sudo tee -a /etc/apt/sources.list.d/neo4j.list
+
+sudo apt-get update
+
+sudo apt-get install neo4j=1:5.25.1
+```
 
 ## LLM x Knowledge Graph
 ### 知识图谱作为检索源
