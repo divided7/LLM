@@ -22,7 +22,7 @@
 ### RAG的实现
 * RAG通常通过两步分离的管道实现：首先检索模型（如DPR）获取相关文档，然后生成模型（如BERT、T5）生成最终回答。
 * 在实践中，可以使用诸如Hugging Face Transformers库中的实现，将RAG模型部署在本地或云端。
-
+在neo4j的官网中有该文档介绍了关于Graph与RAG: https://neo4j.com/blog/graphrag-manifesto/
 ## NER
 NER（Named Entity Recognition，命名实体识别）是一种自然语言处理任务，用于识别文本中的命名实体。命名实体可以是人名、地名、组织名、时间、日期、货币、百分比等具有特定意义的词或短语。NER在信息抽取、知识图谱构建、问答系统等领域具有广泛的应用。
 ### NER的主要步骤
