@@ -161,7 +161,9 @@ Step 5 利用Transformer/GPT的结果搭建三元组
 ### Neo4j安装
 将 Neo4j 仓库添加到系统的apt源列表
 尝试了很多民间方案都安装失败了, 还是找的官方教程:
+
 https://neo4j.com/docs/operations-manual/current/installation/linux/debian/
+
 关于Neo4j的更多搭建部署细节参见本人知乎文章: https://zhuanlan.zhihu.com/p/6404202845
 ## LLM x Knowledge Graph
 ### 知识图谱作为检索源
