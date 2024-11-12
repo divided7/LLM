@@ -158,20 +158,11 @@ Step 5 利用Transformer/GPT的结果搭建三元组
 ```
 
 ## Knowledge Graph
+### Neo4j安装
 将 Neo4j 仓库添加到系统的apt源列表
 尝试了很多民间方案都安装失败了, 还是找的官方教程:
 https://neo4j.com/docs/operations-manual/current/installation/linux/debian/
-具体来说：
-```bash
-wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/neotechnology.gpg
-
-echo 'deb [signed-by=/etc/apt/keyrings/neotechnology.gpg] https://debian.neo4j.com stable latest' | sudo tee -a /etc/apt/sources.list.d/neo4j.list
-
-sudo apt-get update
-
-sudo apt-get install neo4j=1:5.25.1
-```
-
+关于Neo4j的更多搭建部署细节参见本人知乎文章: https://zhuanlan.zhihu.com/p/6404202845
 ## LLM x Knowledge Graph
 ### 知识图谱作为检索源
 检索节点和关系：可以将知识图谱作为检索来源，将用户的查询与知识图谱中的实体和关系匹配，并检索出相关的子图。检索到的结构化信息可以直接传递给生成模型，以提供有根据的生成内容。
