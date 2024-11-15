@@ -202,3 +202,4 @@ https://neo4j.com/docs/operations-manual/current/installation/linux/debian/
 当前存在待优化问题: 现有的word2vec开源模型词库里根本没有垂类任务的词汇, 训练本地word2vec模型由受到数据量, 数据质量的影响导效果较差; ~~是否考虑设置一个节点词库, 最终制作的图谱节点必须是词库内的?~~ 考虑设置三元组中的主体和客体的限定属性来局限, 例如主体只能是人物、运动类型、名称等。
 
 ### 4. 导入Neo4j
+https://zhuanlan.zhihu.com/p/6404202845
