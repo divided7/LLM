@@ -216,3 +216,7 @@ user:
 * 关系消歧: 在节点融合之后，查找主体和客体相同的部分，进行关系融合或消歧, 例如(运动，提高，素质） （运动，增强，素质） （运动，降低，素质），针对关系先进行word2vec的相似度计算，查找到异常结果后记录异常值，并人工标注检查异常值。
 ### 4. 导入Neo4j
 https://zhuanlan.zhihu.com/p/6404202845
+
+### 5. 前端可视化
+http://www.graphvis.cn/graphvis/
+https://www.relation-graph.com/#/index
