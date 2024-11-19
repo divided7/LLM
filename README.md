@@ -13,6 +13,9 @@
 DDL Nov 30: graph x LLM
   
 ## RAG
+常见工具: [Langchain](https://www.langchain.com), [RAGFlow](https://infiniflow.cn)
+
+
 ### RAG的优势
 * 增强的知识覆盖：即使生成模型本身没有直接学习到特定信息，通过检索可以查找到相关信息。
 * 动态更新：由于信息可以实时检索，知识库或数据库中的更新信息可以即时被使用，模型无需重新训练。
