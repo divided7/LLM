@@ -13,8 +13,9 @@
 DDL Nov 30: graph x LLM
   
 ## RAG
-常见工具: [Langchain](https://www.langchain.com), [RAGFlow](https://infiniflow.cn)
-
+**常见工具**
+[RAGFlow](https://infiniflow.cn)  更侧重于通过检索增强生成的方式，专注于利用外部知识来增强语言模型的推理能力。
+[Langchain](https://www.langchain.com)  提供更灵活的框架，支持多种模块集成和复杂的推理任务，适用于多模态交互和不同类型的任务管理。
 
 ### RAG的优势
 * 增强的知识覆盖：即使生成模型本身没有直接学习到特定信息，通过检索可以查找到相关信息。
