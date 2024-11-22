@@ -165,7 +165,16 @@ Step 5 利用Transformer/GPT的结果搭建三元组
 ("公司A", "收购", "公司B")
 ```
 
-## Knowledge Graph
+### 存储数据结构
+最初设计的方案是仅包含`主体`, `关系`, `客体` 三个部分，形如: 
+
+<img width="255" alt="image" src="https://github.com/user-attachments/assets/8b57182b-4a9c-43e6-9a3a-b975df2a609e">
+
+但针对信息溯源、属性缺失等问题，优化数据结构:
+
+<img width="573" alt="image" src="https://github.com/user-attachments/assets/72d99328-0402-4569-9958-c64c44965b26">
+
+
 ### Neo4j安装
 将 Neo4j 仓库添加到系统的apt源列表
 尝试了很多民间方案都安装失败了, 还是找的官方教程:
