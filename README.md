@@ -89,7 +89,22 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
   modelscope download --model Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4 --local_dir ./3B/int4
   modelscope download --model Qwen/Qwen2.5-3B-Instruct --local_dir ./3B/fp16
   modelscope download --model Qwen/Qwen2.5-7B-Instruct --local_dir ./3B/fp16
+
+  # 使用
+  vllm serve 3B/int4 --dtype auto --api-key 123 --port 8008 --max-model-len 32768 --gpu-memory-utilization 0.8
+  或python代码:
+  tokenizer = AutoTokenizer.from_pretrained(model_name)
+  sampling_params = SamplingParams(temperature=0.2, top_p=0.8, repetition_penalty=1.05, max_tokens=512)
+  llm = LLM(model=model_name, gpu_memory_utilization=0.9, enforce_eager=True, max_model_len=32768, tensor_parallel_size=1)
   
+  # gpu_memory_utilization  enforce_eager  memory
+  # 0.9                     False          11GB  
+  # 0.9                     True           9.7GB
+  # 0.7                     True           7.2GB
+  # 0.6                     True           6GB
+  # 0.5                     True           报错, 提示需要降低max_model_len 默认32768: Try increasing `gpu_memory_utilization` or decreasing `max_model_len` when initializing the engine.
+  # 0.4 (不能再低了)         True    max_model_len=16       5.6G
+  # 初始化对话历史
   ```
 ## Knowledge Graph
 ### 什么是三元组信息
