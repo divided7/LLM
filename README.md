@@ -60,17 +60,17 @@ Transformer-based模型（如BERT、RoBERTa、GPT等）：基于Transformer架�
 | 模型                           | HF模型显存占用    | vLLM显存占用   | 可靠性           | 主观评分 |
 |--------------------------------|---------|---------|------------------|------|
 | [Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct)                   | 2.5GB   |       | 几乎不可靠        | 0.1  |
-| [Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct)                   | 4GB     |       | 偶尔可靠         | 0.3  |
-| [Qwen2.5-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct)                       | 7GB     |       | 有些可靠         | 0.5  |
-| [Qwen2.5-3B-Instruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GPTQ-Int4)   | 2.3GB   |  9.2GB| 有些可靠         | 0.5  |
+| [Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct)                   | 4GB     |       | 偶尔可靠         | 0.2  |
+| [Qwen2.5-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct)                       | 7GB     |       | 有些可靠         | 0.3  |
+| [Qwen2.5-3B-Instruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GPTQ-Int4)   | 2.3GB   |  9.2GB| 有些可靠         | 0.3  |
 | [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)                       | 15GB    |       | 有些可靠         | 0.5  |
 | [Qwen2.5-7B-Instruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4)   | 5.4GB   | 16.5GB| 有些可靠         | 0.5  |
 | [Qwen2.5-14B-Instruct](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct)                     | 29GB    |       |                |      |
 | [Qwen2.5-14BInstruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GPTQ-Int4)  |         | 18.3GB|                |      |
 | [Qwen2.5-32B-Instruct](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct)                     | 65GB    |       |                |      |
-| [Qwen2.5-32B-Instruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4)                     |         |21.2GB (max_model_len=48)|                |      |
+| [Qwen2.5-32B-Instruct-GPTQ-Int4](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4)  |    |21.2GB (max_model_len=48)|   |     |
 | [Qwen2.5-72B-Instruct](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct)                     | 145GB   |       |                |      |
-| [DeepSeek-R1-Distill-Qwen-7B](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B)                     |        |    10GB   |                |      |
+| [DeepSeek-R1-Distill-Qwen-7B](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B)   |        |    10GB   |  比Qwen7B强 | 0.6  |
 ### 部署优化
 直接使用Hugging Face上的demo推理模型存在严重效率低效的问题，尝试如下方案:
 * vLLM, 直接，大致需要配置以下环境:
