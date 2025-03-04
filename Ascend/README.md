@@ -117,9 +117,50 @@ torchrun --nproc_per_node 8 \
 
 ## 性能测试
 略 详见[原文档](https://www.hiascend.com/software/modelzoo/models/detail/ee3f9897743a4341b43710f8d204733a)
+```bash
+# 测试未量化模型
+bash run.sh pa_bf16 performance [[256,256]] 1 llama ${未量化模型路径: /deepseek-ai/DeepSeek-R1-Distill-Llama-70B} 8
+# 测试量化模型
+bash run.sh pa_bf16 performance [[256,256]] 1 llama ${量化模型路径: /deepseek-ai/DeepSeek-R1-Distill-Llama-70B-W8A8} 8
+```
+
 
 ## 服务
 ```bash
-vi /usr/local/Ascend/mindie/latest/mindie-service/conf/config.json
+vim /usr/local/Ascend/mindie/latest/mindie-service/conf/config.json
 ```
-<img width="979" alt="image" src="https://github.com/user-attachments/assets/91a596c0-65ed-49c0-b812-4240620cc995" />
+修改下面参数
+```
+{
+...
+"ServerConfig" :
+{
+...
+"port" : 1025, # 自定义 也可以不改
+"managementPort" : 1026, # 自定义 也可以不改
+"metricsPort" : 1027, # 自定义 也可以不改
+...
+"httpsEnabled" : false,
+...
+},
+
+"BackendConfig": {
+...
+"npuDeviceIds" : [[0,1,2,3,4,5,6,7]],
+...
+"ModelDeployConfig":
+{
+"ModelConfig" : [
+{
+...
+"modelName" : "llama",
+"modelWeightPath" : "/data/datasets/DeepSeek-R1-Distill-Llama-70B",
+"worldSize" : 8,
+...
+}
+]
+},
+...
+}
+}
+```
