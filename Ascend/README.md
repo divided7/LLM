@@ -42,7 +42,7 @@ docker images
 此时我们需要用该镜像运行容器，使用指令
 ```bash
 # 这里--name可以自己修改
-# 注意 -v /模型路径:/容器内路径:ro 
+# 注意 -v /模型路径:/容器内路径:rw 
 # 最后一行的结果是根据docker image ls查看到的`{REPOSITORY:TAG} bash`
 docker run -it -d --net=host --shm-size=1g \
     --privileged \
