@@ -190,3 +190,7 @@ ERR: Failed to init endpoint! Please check the service log or console output.
 Killed
 ```
 怀疑是在量化模型过程中的报错中断导致的问题，等华为那边给issues结果再看看，先挂起
+
+# 服务部署
+参考: https://www.hiascend.com/document/detail/zh/mindie/100/mindieservice/servicedev/mindie_service0004.html
+https://www.hiascend.com/document/detail/zh/mindie/100/envdeployment/instg/mindie_instg_0026.html
