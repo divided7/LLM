@@ -180,3 +180,11 @@ vim /usr/local/Ascend/mindie/latest/mindie-service/conf/config.json
 cd /usr/local/Ascend/mindie/latest/mindie-service/bin
 ./mindieservice_daemon
 ```
+结果报错:
+```
+[root@host-5jl98c bin]# ./mindieservice_daemon
+LLMInferEngine failed to init LLMInferModels
+ERR: Failed to init endpoint! Please check the service log or console output.
+Killed
+```
+怀疑是在量化模型过程中的报错中断导致的问题，等华为那边给issues结果再看看，先挂起
