@@ -127,15 +127,13 @@ bash run.sh pa_bf16 performance [[256,256]] 1 llama ${量化模型路径: /deeps
 
 
 ## 服务
+### 启用非量化模型服务
 ```bash
 vim /usr/local/Ascend/mindie/latest/mindie-service/conf/config.json
+chmod -R 750 /PATH/TO/非量化deepseek模型路径 # 确保路径权限正确，因为这个文件夹是容器外部来的
 ```
 修改下面参数
 ```
-{
-...
-"ServerConfig" :
-{
 ...
 "port" : 1025, # 自定义 也可以不改
 "managementPort" : 1026, # 自定义 也可以不改
@@ -144,24 +142,27 @@ vim /usr/local/Ascend/mindie/latest/mindie-service/conf/config.json
 "httpsEnabled" : false,
 ...
 },
-
-"BackendConfig": {
 ...
 "npuDeviceIds" : [[0,1,2,3,4,5,6,7]],
 ...
-"ModelDeployConfig":
-{
-"ModelConfig" : [
-{
-...
 "modelName" : "llama",
-"modelWeightPath" : "/data/datasets/DeepSeek-R1-Distill-Llama-70B",
+"modelWeightPath" : "/data/datasets/DeepSeek-R1-Distill-Llama-70B", # 选择非量化模型路径
 "worldSize" : 8,
 ...
-}
-]
-},
-...
-}
-}
 ```
+测试服务
+```bash
+curl 127.0.0.1:1025/generate -d '{
+"prompt": "介绍一下什么是LLM",
+"max_tokens": 65536,
+"stream": false,
+"do_sample":true,
+"repetition_penalty": 1.00,
+"temperature": 0.01,
+"top_p": 0.001,
+"top_k": 1,
+"model": "llama"
+}'
+```
+结果如下
+<img width="1489" alt="image" src="https://github.com/user-attachments/assets/affc96c2-4a0d-4237-8c60-92439dbceb65" />
