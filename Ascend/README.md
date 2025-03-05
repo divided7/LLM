@@ -118,9 +118,10 @@ torchrun --nproc_per_node 8 \
 ## 性能测试
 略 详见[原文档](https://www.hiascend.com/software/modelzoo/models/detail/ee3f9897743a4341b43710f8d204733a)
 ```bash
-# 测试未量化模型
+cd atb/tests/modeltest/
+# 测试未量化模型（没什么问题）
 bash run.sh pa_bf16 performance [[256,256]] 1 llama ${未量化模型路径: /deepseek-ai/DeepSeek-R1-Distill-Llama-70B} 8
-# 测试量化模型
+# 测试量化模型 (这里有问题，第一个参数{model_type}_{data_type}里，model_type只支持basic, pa, fa; data_type里只支持fp16和bf16, 但该量化模型为8位的)
 bash run.sh pa_bf16 performance [[256,256]] 1 llama ${量化模型路径: /deepseek-ai/DeepSeek-R1-Distill-Llama-70B-W8A8} 8
 ```
 
