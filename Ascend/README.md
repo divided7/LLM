@@ -125,7 +125,6 @@ bash run.sh pa_bf16 performance [[256,256]] 1 llama ${未量化模型路径: /de
 bash run.sh pa_bf16 performance [[256,256]] 1 llama ${量化模型路径: /deepseek-ai/DeepSeek-R1-Distill-Llama-70B-W8A8} 8
 ```
 
-
 ## 服务
 ### 启用非量化模型服务
 ```bash
@@ -150,6 +149,12 @@ chmod -R 750 /PATH/TO/非量化deepseek模型路径 # 确保路径权限正确�
 "worldSize" : 8,
 ...
 ```
+启动服务
+```bash
+cd /usr/local/Ascend/mindie/latest/mindie-service/bin
+./mindieservice_daemon
+```
+
 测试服务
 ```bash
 curl 127.0.0.1:1025/generate -d '{
@@ -166,3 +171,12 @@ curl 127.0.0.1:1025/generate -d '{
 ```
 结果如下
 <img width="1489" alt="image" src="https://github.com/user-attachments/assets/affc96c2-4a0d-4237-8c60-92439dbceb65" />
+### 启用量化模型服务
+```bash
+vim /usr/local/Ascend/mindie/latest/mindie-service/conf/config.json
+```
+修改里面的内容，和非量化模型服务的部分都一样，只有“modelWeightPath”要修改成量化模型路径,然后重新启动服务
+```bash
+cd /usr/local/Ascend/mindie/latest/mindie-service/bin
+./mindieservice_daemon
+```
