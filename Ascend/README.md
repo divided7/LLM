@@ -306,11 +306,6 @@ python ./preprocess_data.py \
 source /usr/local/Ascend/ascend-toolkit/set_env.sh
 
 # 权重格式转换
-python convert_ckpt.py \
-   --model-type GPT \
-   --load-model-type hf \
-   --load-dir /deepseek-ai/DeepSeek-R1-Distill-Llama-70B/ \
-   --save-dir /deepseek-ai/DeepSeek-R1-Distill-Llama-70B-mcore \
-   --model-type-hf llama2 
-   --tokenizer-model /deepseek-ai/DeepSeek-R1-Distill-Llama-70B/tokenizer.json
+python convert_ckpt.py --use-mcore-models --model-type-hf llama2 --model-type GPT --load-model-type hf --save-model-type mg --params-dtype bf16 --target-tensor-parallel-size 1 --target-pipeline-parallel-size 1 --load-dir /deepseek-ai/DeepSeek-R1-Distill-Llama-70B/ --save-dir /deepseek-ai/DeepSeek-R1-Distill-Llama-70B-mcore/ --tokenizer-model /deepseek-ai/DeepSeek-R1-Distill-Llama-70B/tokenizer.json
 ```
+报错Bus error (core dumped)，已提[issues](https://gitee.com/ascend/MindSpeed-LLM/issues/IBRCA4?from=project-issue&search_text=Bus+error)，下次再看看
