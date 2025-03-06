@@ -198,6 +198,7 @@ Killed
 怀疑是在量化模型过程中的报错中断导致的问题，等华为那边给issues结果再看看，先挂起
 
 # 服务部署
+**TODO**
 ```
 临时笔记
 参考:
@@ -205,8 +206,33 @@ https://www.hiascend.com/document/detail/zh/mindie/100/mindieservice/servicedev/
 https://www.hiascend.com/document/detail/zh/mindie/100/envdeployment/instg/mindie_instg_0026.html
 ```
 # 模型训练
+**TODO**
+使用**MindSpeed-LLM**（原名ModelLink）框架进行模型训练。
 ```
 临时笔记
 参考:
 https://gitee.com/ascend/MindSpeed-LLM/tree/e77800f8c654c4eb89f1012774a829e3e6f1e7f4
+https://www.hiascend.com/software/modelzoo/models/detail/52226fe32f7c472084aec868ce55f00c
+```
+## MindSpeed-LLM安装
+由于这里使用的是华为给的镜像，像是CANN、torch、torch-npu已经自带，完整安装步骤参考[该链接](https://gitee.com/ascend/MindSpeed-LLM/blob/master/docs/features/install_guide.md)，这里只记录基于该镜像的安装步骤
+```bash
+source /usr/local/Ascend/ascend-toolkit/set_env.sh  # source ascend-toolkit环境变量
+
+# 安装MindSpeed加速库
+git clone https://gitee.com/ascend/MindSpeed.git
+cd MindSpeed
+git checkout 0dfa0035ec54d9a74b2f6ee2867367df897299df  # checkout commit from MindSpeed core_r0.8.0 in 2025.02.26
+pip install -r requirements.txt 
+pip3 install -e .
+cd ..
+
+# 准备MindSpeed-LLM及Megatron-LM源码
+git clone https://gitee.com/ascend/MindSpeed-LLM.git 
+git clone https://github.com/NVIDIA/Megatron-LM.git
+cd Megatron-LM
+git checkout core_r0.8.0
+cp -r megatron ../MindSpeed-LLM/
+cd ../MindSpeed-LLM
+pip install -r requirements.txt  # 安装其余依赖库
 ```
