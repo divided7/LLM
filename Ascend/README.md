@@ -1,8 +1,12 @@
 # 目录
+* [工具简介](#工具简介)
 * [8卡910B部署Qwen1.5-14B](#昇腾910B部署Qwen1.5-14B)
 * [8卡910B部署DeepSeek_R1_distill_llama70b](#8卡910B部署DeepSeek_R1_distill_llama70b)
 * [服务部署](#服务部署)
 * [模型训练](#模型训练)
+
+# 工具简介
+* [CANN](https://www.hiascend.com/software/cann): CANN（Compute Architecture for Neural Networks）是昇腾针对AI场景推出的异构计算架构，对上支持多种AI框架，对下服务AI处理器与编程，发挥承上启下的关键作用，是提升昇腾AI处理器计算效率的关键平台。同时针对多样化应用场景，提供高效易用的编程接口，支持用户快速构建基于昇腾平台的AI应用和业务。
 
 # 昇腾910B部署Qwen1.5-14B
 参考该文档: [昇腾复现笔记](https://github.com/divided7/Ascend_Study/blob/main/昇腾复现笔记.md)
