@@ -244,3 +244,7 @@ cp -r megatron ../MindSpeed-LLM/
 cd ../MindSpeed-LLM
 pip install -r requirements.txt  # 安装其余依赖库
 ```
+
+## 数据准备和处理
+[Alpaca风格数据集](https://gitee.com/ascend/MindSpeed-LLM/blob/e77800f8c654c4eb89f1012774a829e3e6f1e7f4/docs/features/alpaca_dataset.md)
+也可参见MindSpeed-LLM中的`MindSpeed-LLM/examples/mcore/deepseek_r1_distill_llama`路径下的[data_convert_distill_llama_instruction.sh](https://gitee.com/ascend/MindSpeed-LLM/blob/e77800f8c654c4eb89f1012774a829e3e6f1e7f4/examples/mcore/deepseek_r1_distill_llama/data_convert_distill_llama_instruction.sh)
