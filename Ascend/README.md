@@ -285,7 +285,7 @@ ls dataset/train-00000-of-00001-a09b74b3ef9c3b56.parquet # 检查alpaca数据集
 
 python ./preprocess_data.py \
     --input ./dataset/train-00000-of-00001-a09b74b3ef9c3b56.parquet \
-    --tokenizer-name-or-path ./model_from_hf/llama3-distill/ \
+    --tokenizer-name-or-path /deepseek-ai/DeepSeek-R1-Distill-Llama-70B/ \ # 替换成模型tokenizer.json所在的路径，即一般是hf模型权重所在路径
     --output-prefix ./finetune_dataset/alpaca \
     --workers 4 \
     --log-interval 1000 \
@@ -294,4 +294,23 @@ python ./preprocess_data.py \
     --handler-name AlpacaStyleInstructionHandler \
     --prompt-type deepseek3 \
     --seq-length 8192 \
+```
+此时处理好的数据会保存在`MindSpeed-LLM/finetune_dataset`
+<img width="1049" alt="image" src="https://github.com/user-attachments/assets/b2126a48-22c2-44e0-a735-35a096fb6f48" />
+
+## 模型 hf -> mcore
+[参考例子](https://gitee.com/ascend/MindSpeed-LLM/blob/e77800f8c654c4eb89f1012774a829e3e6f1e7f4/examples/mcore/deepseek_r1_distill_llama/ckpt_convert_distill_llama_hf2mcore.sh)
+本质代码：
+```bash
+# 修改 ascend-toolkit 路径
+source /usr/local/Ascend/ascend-toolkit/set_env.sh
+
+# 权重格式转换
+python convert_ckpt.py \
+   --model-type GPT \
+   --load-model-type hf \
+   --load-dir /deepseek-ai/DeepSeek-R1-Distill-Llama-70B/ \
+   --save-dir /deepseek-ai/DeepSeek-R1-Distill-Llama-70B-mcore \
+   --model-type-hf llama2 
+   --tokenizer-model /deepseek-ai/DeepSeek-R1-Distill-Llama-70B/tokenizer.json
 ```
