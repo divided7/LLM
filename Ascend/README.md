@@ -198,8 +198,15 @@ Killed
 怀疑是在量化模型过程中的报错中断导致的问题，等华为那边给issues结果再看看，先挂起
 
 # 服务部署
-参考: https://www.hiascend.com/document/detail/zh/mindie/100/mindieservice/servicedev/mindie_service0004.html
+```
+临时笔记
+参考:
+https://www.hiascend.com/document/detail/zh/mindie/100/mindieservice/servicedev/mindie_service0004.html
 https://www.hiascend.com/document/detail/zh/mindie/100/envdeployment/instg/mindie_instg_0026.html
-
+```
 # 模型训练
-
+```
+临时笔记
+参考:
+https://gitee.com/ascend/MindSpeed-LLM/tree/e77800f8c654c4eb89f1012774a829e3e6f1e7f4
+```
