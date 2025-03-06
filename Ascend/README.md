@@ -5,7 +5,7 @@
 * [模型训练](#模型训练)
 
 # 昇腾910B部署Qwen1.5-14B
-https://github.com/divided7/Ascend_Study/blob/main/昇腾复现笔记.md
+参考该文档: [昇腾复现笔记](https://github.com/divided7/Ascend_Study/blob/main/昇腾复现笔记.md)
 
 # 昇腾910B部署DeepSeek_R1_distill_llama70b
 ## 前期准备:
