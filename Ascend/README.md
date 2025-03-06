@@ -1,5 +1,6 @@
 # Catalog
 * [8卡910B部署Qwen1.5-14B](#昇腾910B部署Qwen1.5-14B)
+* [模型训练](#模型训练)
 # 昇腾910B部署Qwen1.5-14B
 https://github.com/divided7/Ascend_Study/blob/main/昇腾复现笔记.md
 
@@ -196,3 +197,6 @@ Killed
 # 服务部署
 参考: https://www.hiascend.com/document/detail/zh/mindie/100/mindieservice/servicedev/mindie_service0004.html
 https://www.hiascend.com/document/detail/zh/mindie/100/envdeployment/instg/mindie_instg_0026.html
+
+# 模型训练
+
