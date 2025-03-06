@@ -203,7 +203,7 @@ LLMInferEngine failed to init LLMInferModels
 ERR: Failed to init endpoint! Please check the service log or console output.
 Killed
 ```
-怀疑是在量化模型过程中的报错中断导致的问题，等华为那边给issues结果再看看，先挂起
+怀疑是在量化模型过程中的报错中断导致的问题，等华为那边给[issues](https://gitee.com/ascend/msit/issues/IBQOGM?from=project-issue)结果再看看，先挂起
 
 # 服务部署
 **TODO**
