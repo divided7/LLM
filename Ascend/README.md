@@ -1,3 +1,5 @@
+# Catalog
+* ![8卡910B部署Qwen1.5-14B](# 昇腾910B部署Qwen1.5-14B)
 # 昇腾910B部署Qwen1.5-14B
 https://github.com/divided7/Ascend_Study/blob/main/昇腾复现笔记.md
 
