@@ -9,7 +9,7 @@
 * [CANN](https://www.hiascend.com/software/cann): CANN（Compute Architecture for Neural Networks）是昇腾针对AI场景推出的异构计算架构，对上支持多种AI框架，对下服务AI处理器与编程，发挥承上启下的关键作用，是提升昇腾AI处理器计算效率的关键平台。同时针对多样化应用场景，提供高效易用的编程接口，支持用户快速构建基于昇腾平台的AI应用和业务。可近似对标NVIDIA CUDA + cuDNN。
 * [MindIE](https://www.hiascend.com/software/mindie): 昇腾推理引擎，基于昇腾硬件的运行加速、调试调优、快速迁移部署的高性能深度学习推理框架，分层开放满足各类需求，统一接口使能极简开发，沉淀能力构筑极致性能。对标TRT、ONNX Runtime。
 * [MindSpore](https://www.mindspore.cn): 昇思MindSpore，全场景AI框架，对标Pytorch、Tensorflow、PaddlePaddle。
-    * [msModelSlim](https://gitee.com/ascend/msit/tree/dev/msmodelslim): MindSpore生态中用于模型压缩的组件。
+    * [msModelSlim](https://gitee.com/ascend/msit/tree/dev/msmodelslim): MindSpore生态中用于模型压缩的组件，实现量化、剪枝等操作。
 * [MindSpeed-LLM](https://gitee.com/ascend/MindSpeed-LLM/tree/master): MindSpeed-LLM是基于昇腾生态的大语言模型分布式训练框架，旨在为华为昇腾芯片生态合作伙伴提供端到端的大语言模型训练方案，包含分布式预训练、分布式指令微调、分布式偏好对齐以及对应的开发工具链，如：数据预处理、权重转换、在线推理、基线评估。
 
 # 昇腾910B部署Qwen1.5-14B
