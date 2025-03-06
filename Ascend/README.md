@@ -251,13 +251,16 @@ git clone -b master https://gitee.com/ascend/apex.git
 cd apex
 bash scripts/build.sh --python=3.11 # 这里官方是些的只支持到3.10，但是下方又写的支持3.11; 该指令从github拉取仓库，注意网络问题，如果在#include <torch/extension.h>报错参考pr: https://gitee.com/ascend/apex/pulls/129
 
-# 如果上面bash scripts/build.sh --python=3.11报错#include <torch/extension.h>相关则进行下面操作 否则不操作:
+# 如果上面bash scripts/build.sh --python=3.11报错#include <torch/extension.h>相关则进行下面操作 否则跳过:
+# -- 报错#include <torch/extension.h> --
 cd ..
 rm -rf apex
 pip show torch # 查看torch的Location，例如我的是 /usr/local/lib64/python3.11/site-packages
 vim patch/npu.patch
 # 修改 patch/npu.patch 直接修改第2649行，把 package_dir 手工指定为上面torch的位置，即我这个例子中的 /usr/local/lib64/python3.11/site-packages
 bash scripts/build.sh --python=3.11
+# -- 报错#include <torch/extension.h> --
+
 cd apex/dist
 pip install *.whl # 安装当前路径的whl文件
 ```
