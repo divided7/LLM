@@ -243,8 +243,52 @@ git checkout core_r0.8.0
 cp -r megatron ../MindSpeed-LLM/
 cd ../MindSpeed-LLM
 pip install -r requirements.txt  # 安装其余依赖库
+
+yum install patch gcc gcc-c++ # 安装patch, gcc, g++
+
+# 安装apex, 参考: https://gitee.com/ascend/apex
+git clone -b master https://gitee.com/ascend/apex.git
+cd apex
+bash scripts/build.sh --python=3.11 # 这里官方是些的只支持到3.10，但是下方又写的支持3.11; 该指令从github拉取仓库，注意网络问题，如果在#include <torch/extension.h>报错参考pr: https://gitee.com/ascend/apex/pulls/129
+
+# 如果上面bash scripts/build.sh --python=3.11报错#include <torch/extension.h>相关则进行下面操作 否则不操作:
+cd ..
+rm -rf apex
+pip show torch # 查看torch的Location，例如我的是 /usr/local/lib64/python3.11/site-packages
+vim patch/npu.patch
+# 修改 patch/npu.patch 直接修改第2649行，把 package_dir 手工指定为上面torch的位置，即我这个例子中的 /usr/local/lib64/python3.11/site-packages
+bash scripts/build.sh --python=3.11
+cd apex/dist
+pip install *.whl # 安装当前路径的whl文件
 ```
 
 ## 数据准备和处理
 [Alpaca风格数据集](https://gitee.com/ascend/MindSpeed-LLM/blob/e77800f8c654c4eb89f1012774a829e3e6f1e7f4/docs/features/alpaca_dataset.md)
-也可参见MindSpeed-LLM中的`MindSpeed-LLM/examples/mcore/deepseek_r1_distill_llama`路径下的[data_convert_distill_llama_instruction.sh](https://gitee.com/ascend/MindSpeed-LLM/blob/e77800f8c654c4eb89f1012774a829e3e6f1e7f4/examples/mcore/deepseek_r1_distill_llama/data_convert_distill_llama_instruction.sh)
+
+这里用Alpaca数据集`train-00000-of-00001-a09b74b3ef9c3b56.parquet`，[下载链接](https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/main/data/train-00000-of-00001-a09b74b3ef9c3b56.parquet), 需要梯子（24.2MB）。
+
+将`train-00000-of-00001-a09b74b3ef9c3b56.parquet`放到容器MindSpeed-LLM路径的`MindSpeed-LLM/dataset/train-00000-of-00001-a09b74b3ef9c3b56.parquet`, `MindSpeed-LLM/dataset`路径需要手工创建。
+
+
+数据处理参见MindSpeed-LLM中的`MindSpeed-LLM/examples/mcore/deepseek_r1_distill_llama`路径下的[data_convert_distill_llama_instruction.sh](https://gitee.com/ascend/MindSpeed-LLM/blob/e77800f8c654c4eb89f1012774a829e3e6f1e7f4/examples/mcore/deepseek_r1_distill_llama/data_convert_distill_llama_instruction.sh)
+为了方便更新参数，这里直接把sh脚本内容掏出来手工运行，下面的代码均来自bash脚本
+
+```bash
+cd /PATH/TO/MindSpeed-LLM
+source /usr/local/Ascend/ascend-toolkit/set_env.sh
+mkdir ./finetune_dataset
+
+ls dataset/train-00000-of-00001-a09b74b3ef9c3b56.parquet # 检查alpaca数据集位置是否正确
+
+python ./preprocess_data.py \
+    --input ./dataset/train-00000-of-00001-a09b74b3ef9c3b56.parquet \
+    --tokenizer-name-or-path ./model_from_hf/llama3-distill/ \
+    --output-prefix ./finetune_dataset/alpaca \
+    --workers 4 \
+    --log-interval 1000 \
+    --tokenizer-type PretrainedFromHF \
+    --tokenizer-not-use-fast \
+    --handler-name AlpacaStyleInstructionHandler \
+    --prompt-type deepseek3 \
+    --seq-length 8192 \
+```
