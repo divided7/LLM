@@ -15,8 +15,6 @@
 * 如何实现模型并行？vLLM似乎只支持数据并行，当单卡显存不足以推理模型时即使多卡也无法推理
 * 如何微调LLM？ 参考: https://qwen.readthedocs.io/zh-cn/latest/training/SFT/llama_factory.html
 
-DDL Nov 30: graph x LLM
-  
 ## RAG
 **常见工具**
 
