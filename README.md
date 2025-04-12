@@ -1,6 +1,6 @@
 # Catalogue
-* [LLM](#LLM)
-* [LLM & Knowledge Graph](#LLM---KG)
+* [LLM](#llm)
+* [LLM & Knowledge Graph](#llm--kg)
 # LLM
 
 # LLM & KG
