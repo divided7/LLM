@@ -2,9 +2,8 @@
 * [LLM](#llm)
 * [LLM & Knowledge Graph](#llm--kg)
 # LLM
-当然可以！以下是对你列出的这些工具的优缺点简要分析，按照功能分类，方便你快速对比选择使用：
-
----
+## 数据准备
+以下内容参考自: https://wangrongsheng.github.io/awesome-LLM-resourses/
 
 ### **数据标注与合成工具**
 | 工具 | 优点 | 缺点 |
