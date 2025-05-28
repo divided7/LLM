@@ -165,3 +165,39 @@ model.linear = merge_lora_weights(model.linear)
 | 可选合并              | 推理前可以合并为普通 Linear 层                |
 
 ---
+
+
+
+
+## UML 类图（Mermaid）
+
+```mermaid
+classDiagram
+    class Preprocessor {
+        +preprocess_image()
+        -_letterbox()
+    }
+
+    class ModelRunner {
+        +load_model()
+        +init_runtime()
+        +run_inference()
+        +release()
+    }
+
+    class Postprocessor {
+        +decode_dfl()
+        +decode_bbox()
+        +sigmoid()
+    }
+
+    class RopeSkippingPose {
+        +preprocessor: Preprocessor
+        +model_runner: ModelRunner
+        +postprocessor: Postprocessor
+        +infer()
+    }
+
+    RopeSkippingPose --> Preprocessor
+    RopeSkippingPose --> ModelRunner
+    RopeSkippingPose --> Postprocessor
